@@ -1,25 +1,21 @@
 {
   "name": "apricode",
   "version": "1.0.0",
+  "main": "node_modules/expo/AppEntry.js",
   "scripts": {
-    "test": "exit 0"
+    "start": "expo start",
+    "android": "expo start --android",
+    "ios": "expo start --ios",
+    "web": "expo start --web"
   },
-  "files": [
-    "template",
-    "template.config.js"
-  ],
-  "keywords": [
-    "react-native",
-    "typescript",
-    "jest",
-    "template",
-    "boilerplate"
-  ],
-  "author": "Emin Khateeb <emin@emin.ch>",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/emin93/react-native-template-typescript/issues"
+  "dependencies": {
+    "expo": "~46.0.9",
+    "expo-status-bar": "~1.4.0",
+    "react": "18.0.0",
+    "react-native": "0.69.5"
   },
-  "homepage": "https://github.com/emin93/react-native-template-typescript#readme",
+  "devDependencies": {
+    "@babel/core": "^7.12.9"
+  },
   "private": true
 }
