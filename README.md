@@ -1,104 +1,72 @@
+# :space_invader: React Native Template TypeScript
 
-# TypeScript
+<p>
+  <a href="https://github.com/react-native-community/react-native-template-typescript/actions/workflows/npm-publish.yml">
+    <img alt="Build Status" src="https://github.com/react-native-community/react-native-template-typescript/actions/workflows/npm-publish.yml/badge.svg" />
+  </a>
+  <a href="https://github.com/react-native-community/react-native-template-typescript#readme">
+    <img alt="Documentation" src="https://img.shields.io/badge/documentation-yes-brightgreen.svg" />
+  </a>
+  <a href="https://github.com/react-native-community/react-native-template-typescript/graphs/commit-activity">
+    <img alt="Maintenance" src="https://img.shields.io/badge/Maintained%3F-yes-green.svg" />
+  </a>
+  <a href="https://github.com/react-native-community/react-native-template-typescript/blob/master/LICENSE">
+    <img alt="License: MIT" src="https://img.shields.io/badge/License-MIT-yellow.svg" />
+  </a>
+</p>
 
-[![GitHub Actions CI](https://github.com/microsoft/TypeScript/workflows/CI/badge.svg)](https://github.com/microsoft/TypeScript/actions?query=workflow%3ACI)
-[![Devops Build Status](https://dev.azure.com/typescript/TypeScript/_apis/build/status/Typescript/node10)](https://dev.azure.com/typescript/TypeScript/_build?definitionId=7)
-[![npm version](https://badge.fury.io/js/typescript.svg)](https://www.npmjs.com/package/typescript)
-[![Downloads](https://img.shields.io/npm/dm/typescript.svg)](https://www.npmjs.com/package/typescript)
+> Clean and minimalist React Native template for a quick start with TypeScript.
 
-[TypeScript](https://www.typescriptlang.org/) is a language for application-scale JavaScript. TypeScript adds optional types to JavaScript that support tools for large-scale JavaScript applications for any browser, for any host, on any OS. TypeScript compiles to readable, standards-based JavaScript. Try it out at the [playground](https://www.typescriptlang.org/play/), and stay up to date via [our blog](https://blogs.msdn.microsoft.com/typescript) and [Twitter account](https://twitter.com/typescript).
+## :star: Features
 
-Find others who are using TypeScript at [our community page](https://www.typescriptlang.org/community/).
+- Elegant usage directly within the [React Native CLI](https://github.com/react-native-community/cli)
+- Consistent with the default React Native template
+- Minimal additional dependencies
 
-## Installing
+## :arrow_forward: Usage
 
-For the latest stable version:
-
-```bash
-npm install -g typescript
+```sh
+npx react-native init MyApp --template react-native-template-typescript
 ```
 
-For our nightly builds:
+### Usage with older versions of React Native
 
-```bash
-npm install -g typescript@next
+#### e.g. `react-native@0.69.x`
+
+```sh
+npx react-native init MyApp --template react-native-template-typescript@6.11.9
 ```
 
-## Contribute
+See the below table to find out which version of the template to use.
 
-There are many ways to [contribute](https://github.com/microsoft/TypeScript/blob/main/CONTRIBUTING.md) to TypeScript.
-* [Submit bugs](https://github.com/microsoft/TypeScript/issues) and help us verify fixes as they are checked in.
-* Review the [source code changes](https://github.com/microsoft/TypeScript/pulls).
-* Engage with other TypeScript users and developers on [StackOverflow](https://stackoverflow.com/questions/tagged/typescript).
-* Help each other in the [TypeScript Community Discord](https://discord.gg/typescript).
-* Join the [#typescript](https://twitter.com/search?q=%23TypeScript) discussion on Twitter.
-* [Contribute bug fixes](https://github.com/microsoft/TypeScript/blob/main/CONTRIBUTING.md).
-* Read the archived language specification ([docx](https://github.com/microsoft/TypeScript/blob/main/doc/TypeScript%20Language%20Specification%20-%20ARCHIVED.docx?raw=true),
- [pdf](https://github.com/microsoft/TypeScript/blob/main/doc/TypeScript%20Language%20Specification%20-%20ARCHIVED.pdf?raw=true), [md](https://github.com/microsoft/TypeScript/blob/main/doc/spec-ARCHIVED.md)).
+#### React Native <=> Template Version
 
-This project has adopted the [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/). For more information see
-the [Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/) or contact [opencode@microsoft.com](mailto:opencode@microsoft.com)
-with any additional questions or comments.
+| React Native | Template |
+| ------------ | -------- |
+| 0.70         | 6.12.\*  |
+| 0.69         | 6.11.\*  |
+| 0.68         | 6.10.\*  |
+| 0.67         | 6.9.\*   |
+| 0.66         | 6.8.\*   |
+| 0.65         | 6.7.\*   |
+| 0.64         | 6.6.\*   |
+| 0.63         | 6.5.\*   |
+| 0.62         | 6.4.\*   |
+| 0.61         | 6.3.\*   |
+| 0.60         | 6.2.\*   |
 
-## Documentation
+## :warning: React Native CLI
 
-*  [TypeScript in 5 minutes](https://www.typescriptlang.org/docs/handbook/typescript-in-5-minutes.html)
-*  [Programming handbook](https://www.typescriptlang.org/docs/handbook/intro.html)
-*  [Homepage](https://www.typescriptlang.org/)
+This template only works with the new CLI. Make sure you have uninstalled the legacy `react-native-cli` first (`npm uninstall -g react-native-cli`) for the below command to work. If you wish to not use `npx`, you can also install the new CLI globally (`npm i -g @react-native-community/cli` or `yarn global add @react-native-community/cli`).
 
-## Building
+If you tried the above and still get the react-native-template-react- native-template-typescript: Not found error, please try adding the `--ignore-existing` flag to [force npx to ignore](https://github.com/npm/npx#description) any locally installed versions of the CLI and use the latest.
 
-In order to build the TypeScript compiler, ensure that you have [Git](https://git-scm.com/downloads) and [Node.js](https://nodejs.org/) installed.
+Further information can be found here: https://github.com/react-native-community/cli#about
 
-Clone a copy of the repo:
+## :computer: Contributing
 
-```bash
-git clone https://github.com/microsoft/TypeScript.git
-```
+Contributions are very welcome. Please check out the [contributing document](CONTRIBUTING.md).
 
-Change to the TypeScript directory:
+## :bookmark: License
 
-```bash
-cd TypeScript
-```
-
-Install [Gulp](https://gulpjs.com/) tools and dev dependencies:
-
-```bash
-npm install -g gulp
-npm ci
-```
-
-Use one of the following to build and test:
-
-```
-gulp local             # Build the compiler into built/local.
-gulp clean             # Delete the built compiler.
-gulp LKG               # Replace the last known good with the built one.
-                       # Bootstrapping step to be executed when the built compiler reaches a stable state.
-gulp tests             # Build the test infrastructure using the built compiler.
-gulp runtests          # Run tests using the built compiler and test infrastructure.
-                       # You can override the specific suite runner used or specify a test for this command.
-                       # Use --tests=<testPath> for a specific test and/or --runner=<runnerName> for a specific suite.
-                       # Valid runners include conformance, compiler, fourslash, project, user, and docker
-                       # The user and docker runners are extended test suite runners - the user runner
-                       # works on disk in the tests/cases/user directory, while the docker runner works in containers.
-                       # You'll need to have the docker executable in your system path for the docker runner to work.
-gulp runtests-parallel # Like runtests, but split across multiple threads. Uses a number of threads equal to the system
-                       # core count by default. Use --workers=<number> to adjust this.
-gulp baseline-accept   # This replaces the baseline test results with the results obtained from gulp runtests.
-gulp lint              # Runs eslint on the TypeScript source.
-gulp help              # List the above commands.
-```
-
-
-## Usage
-
-```bash
-node built/local/tsc.js hello.ts
-```
-
-
-## Roadmap
-
-For details on our planned features and future direction please refer to our [roadmap](https://github.com/microsoft/TypeScript/wiki/Roadmap).
+This project is [MIT](LICENSE) licensed.
