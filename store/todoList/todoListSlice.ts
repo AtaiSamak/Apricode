@@ -3,8 +3,7 @@ import "react-native-get-random-values";
 import { nanoid } from "nanoid";
 import type { PayloadAction } from "@reduxjs/toolkit";
 import { FilterMethods } from "../../constants/todoList";
-import type TodoItem from "../../types/todoList";
-import FilterTodos from "../../utils/filter";
+import type { TodoItem } from "../../types/todoList";
 
 const initialState = {
 	filterMethod: FilterMethods.ALL as FilterMethods,

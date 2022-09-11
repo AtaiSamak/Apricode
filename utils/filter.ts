@@ -1,4 +1,4 @@
-import type TodoItem from "../types/todoList";
+import type { TodoItem } from "../types/todoList";
 
 class FilterTodos {
 	static byCompleted(todos: TodoItem[]) {

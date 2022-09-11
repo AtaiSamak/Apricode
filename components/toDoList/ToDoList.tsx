@@ -1,12 +1,11 @@
 import React, { useState, useMemo } from "react";
-import { Text, View, Pressable } from "react-native";
-import styles from "../../styles/todoList/todoListStyles";
 import TodoListAddModal from "./TodoListAddModal";
-import TodoListItem from "./TodoListItem";
-import { useSelector } from "react-redux";
 import { RootState } from "../../store/rootStore";
+import { useSelector } from "react-redux";
 import { FilterMethods } from "../../constants/todoList";
 import FilterTodos from "../../utils/filter";
+import TodoListHeader from "./TodoListHeader";
+import TodoListBody from "./TodoListBody";
 
 const TodoList = () => {
 	const [modalVisible, setModalVisible] = useState(false);
@@ -26,26 +25,8 @@ const TodoList = () => {
 
 	return (
 		<>
-			<View style={styles.container}>
-				{filteredTodos.map(
-					({ id, title, options, completed }, index, array) => (
-						<React.Fragment key={id}>
-							<TodoListItem
-								id={id}
-								title={title}
-								completed={completed}
-								options={options}
-							/>
-							{index < array.length - 1 ? (
-								<View style={styles.separator} />
-							) : null}
-						</React.Fragment>
-					)
-				)}
-				<Pressable style={styles.button} onPress={() => setModalVisible(true)}>
-					<Text style={styles.buttonText}>Добавить</Text>
-				</Pressable>
-			</View>
+			<TodoListHeader />
+			<TodoListBody todos={filteredTodos} setModalVisible={setModalVisible} />
 			<TodoListAddModal
 				modalVisible={modalVisible}
 				setModalVisible={setModalVisible}

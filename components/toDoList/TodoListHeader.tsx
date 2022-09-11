@@ -1,13 +1,13 @@
 import React, { useState } from "react";
 import { View, Text, Pressable } from "react-native";
-import styles from "../../styles/header/headerStyles";
-import TodoListFilterModal from "../todoList/TodoListFilterModal";
+import styles from "../../styles/todoList/todoListHeaderStyles";
+import TodoListFilterModal from "./TodoListFilterModal";
 import { useSelector } from "react-redux";
 import { RootState } from "../../store/rootStore";
 import { FilterMethods } from "../../constants/todoList";
 import { FILTER_METHOD_LABELS } from "../../constants/todoList";
 
-const Header = () => {
+const TodoListHeader = () => {
 	const [modalVisible, setModalVisible] = useState(false);
 	const { filterMethod } = useSelector((state: RootState) => state.todoList);
 	const activeFilterLabel = FILTER_METHOD_LABELS.find(
@@ -29,4 +29,4 @@ const Header = () => {
 	);
 };
 
-export default Header;
+export default TodoListHeader;

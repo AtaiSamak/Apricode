@@ -21,7 +21,7 @@ const TodoListFilterModal: React.FunctionComponent<Props> = ({
 		(state: RootState) => state.todoList.filterMethod
 	);
 
-	const buttonsComponents = FILTER_METHOD_LABELS.map(
+	const buttonElements = FILTER_METHOD_LABELS.map(
 		({ label, filterMethod }, index, array) => {
 			const borderStyles =
 				index === 0 || index === array.length - 1 ? null : styles.buttonBorders;
@@ -31,6 +31,7 @@ const TodoListFilterModal: React.FunctionComponent<Props> = ({
 					key={index}
 					style={[styles.button, borderStyles]}
 					onPress={() => {
+						if (filterMethod === activeFilterMethod) return;
 						dispatch(todoListActions.changeFilterMethod({ filterMethod }));
 						setModalVisible(false);
 					}}
@@ -57,7 +58,7 @@ const TodoListFilterModal: React.FunctionComponent<Props> = ({
 				style={styles.container}
 			>
 				<TouchableOpacity style={styles.content}>
-					{buttonsComponents}
+					{buttonElements}
 				</TouchableOpacity>
 			</TouchableOpacity>
 		</Modal>
