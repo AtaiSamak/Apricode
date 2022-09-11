@@ -5,12 +5,7 @@ import styles from "../../styles/todoList/todoListFilterModal";
 import { useDispatch, useSelector } from "react-redux";
 import { todoListActions } from "../../store/todoList/todoListSlice";
 import { RootState } from "../../store/rootStore";
-
-const BUTTONS = [
-	{ name: "Показывать все задания", filterMethod: FilterMethods.ALL },
-	{ name: "Выполненные", filterMethod: FilterMethods.COMPLETED },
-	{ name: "Не выполненные", FilterMethods: FilterMethods.UNCOMPLETED },
-];
+import { FILTER_METHOD_LABELS } from "../../constants/todoList";
 
 type Props = {
 	modalVisible: boolean;
@@ -26,8 +21,8 @@ const TodoListFilterModal: React.FunctionComponent<Props> = ({
 		(state: RootState) => state.todoList.filterMethod
 	);
 
-	const buttonsComponents = BUTTONS.map(
-		({ name, filterMethod }, index, array) => {
+	const buttonsComponents = FILTER_METHOD_LABELS.map(
+		({ label, filterMethod }, index, array) => {
 			const borderStyles =
 				index === 0 || index === array.length - 1 ? null : styles.buttonBorders;
 
@@ -48,7 +43,7 @@ const TodoListFilterModal: React.FunctionComponent<Props> = ({
 								: null,
 						]}
 					>
-						{name}
+						{label}
 					</Text>
 				</Pressable>
 			);

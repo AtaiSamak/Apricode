@@ -3,13 +3,8 @@ import "react-native-get-random-values";
 import { nanoid } from "nanoid";
 import type { PayloadAction } from "@reduxjs/toolkit";
 import { FilterMethods } from "../../constants/todoList";
-
-type TaskItem = {
-	id: string;
-	title: string;
-	options: string;
-	completed: boolean;
-};
+import type TodoItem from "../../types/todoList";
+import FilterTodos from "../../utils/filter";
 
 const initialState = {
 	filterMethod: FilterMethods.ALL as FilterMethods,
@@ -33,7 +28,7 @@ const initialState = {
 				"Подготовить клей, ножницы, вл. салфетки, цветную бумагу, ножницы, шерстняые нитки",
 			completed: false,
 		},
-	] as TaskItem[],
+	] as TodoItem[],
 };
 
 const todoListSlice = createSlice({
@@ -41,7 +36,7 @@ const todoListSlice = createSlice({
 	initialState,
 	reducers: {
 		addTodo: {
-			reducer: (state, action: PayloadAction<TaskItem>) => {
+			reducer: (state, action: PayloadAction<TodoItem>) => {
 				state.items.push(action.payload);
 			},
 			prepare: (title: string, options: string) => ({
