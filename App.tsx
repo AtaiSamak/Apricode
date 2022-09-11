@@ -1,13 +1,17 @@
-import { StatusBar, StyleSheet, Text, View } from "react-native";
+import { StatusBar, StyleSheet, View } from "react-native";
 import Header from "./components/header";
-import ToDoList from "./components/toDoList";
+import TodoList from "./components/todoList";
+import { Provider } from "react-redux";
+import store from "./store/rootStore";
 
 const App = () => (
-	<View style={styles.container}>
-		<StatusBar></StatusBar>
-		<Header></Header>
-		<ToDoList></ToDoList>
-	</View>
+	<Provider store={store}>
+		<View style={styles.container}>
+			<StatusBar></StatusBar>
+			<Header></Header>
+			<TodoList></TodoList>
+		</View>
+	</Provider>
 );
 
 const styles = StyleSheet.create({

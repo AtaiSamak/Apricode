@@ -1,38 +1,23 @@
-import React from "react";
+import React, { useState } from "react";
 import { Text, View, Pressable } from "react-native";
-import styles from "../../styles/toDoList/toDoListStyles";
-import ToDoListAddModal from "./ToDoListAddModal";
-import ToDoListItem from "./ToDoListItem";
+import styles from "../../styles/todoList/todoListStyles";
+import TodoListAddModal from "./TodoListAddModal";
+import TodoListItem from "./TodoListItem";
+import { useSelector } from "react-redux";
+import { RootState } from "../../store/rootStore";
 
-const data = [
-	{
-		id: 1,
-		title: "Math",
-		options: "Hello world",
-		completed: false,
-	},
-	{
-		id: 2,
-		title: "English",
-		options: "Read book",
-		completed: true,
-	},
-	{
-		id: 3,
-		title: "ISO",
-		options:
-			"Подготовить клей, ножницы, вл. салфетки, цветную бумагу, ножницы, шерстняые нитки",
-		completed: false,
-	},
-];
+const TodoList = () => {
+	const [modalVisible, setModalVisible] = useState(false);
 
-const ToDoList = () => {
+	const todos = useSelector((state: RootState) => state.todoList.items);
+
 	return (
 		<>
 			<View style={styles.container}>
-				{data.map(({ id, title, options, completed }, index, array) => (
+				{todos.map(({ id, title, options, completed }, index, array) => (
 					<React.Fragment key={id}>
-						<ToDoListItem
+						<TodoListItem
+							id={id}
 							title={title}
 							completed={completed}
 							options={options}
@@ -42,13 +27,16 @@ const ToDoList = () => {
 						) : null}
 					</React.Fragment>
 				))}
-				<Pressable style={styles.button}>
+				<Pressable style={styles.button} onPress={() => setModalVisible(true)}>
 					<Text style={styles.buttonText}>Добавить</Text>
 				</Pressable>
 			</View>
-			<ToDoListAddModal modalVisible={true} />
+			<TodoListAddModal
+				modalVisible={modalVisible}
+				setModalVisible={setModalVisible}
+			/>
 		</>
 	);
 };
 
-export default ToDoList;
+export default TodoList;
